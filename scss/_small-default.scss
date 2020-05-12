@@ -1,0 +1,195 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+
+/*  apply a natural box layout model to all elements  */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+
+/* ------------------ Body ------------------ */
+
+body {
+    font-family: $defaultFont;
+    font-weight: $normalWeight;
+    font-size: 16px;
+    
+} // end of body 
+
+
+
+
+
+/* ------------------ Header ------------------ */
+
+header {
+    background-color: $primaryColor;
+    color: $secondaryColor;
+    padding: 1rem $gutter;
+
+    form {float:right;}
+    form input {
+        width: 6rem;
+        border-radius: 10px;
+        margin-right:2%;
+        padding: .2rem;
+        border: none;    
+        transition: width .5s;
+    }
+    form input:focus{width:8rem;}
+
+    h1 {
+        font-size: 2rem;
+        font-weight: $normalWeight;
+    } // end of h1
+
+    h2 {
+        font-size: 1.25rem;
+        font-weight: $normalWeight;
+    } // end of h2
+
+
+
+
+} // end of header
+
+
+
+/* ------------------ Navigation ------------------ */
+
+nav {
+    background-color: $secondaryColor;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+
+    ul li {
+        float: left;
+        width: 25%;
+        border-right: 1px solid rgba(0,0,0,0.3);
+    } // end of li
+
+    ul li:last-child {border-right: none;}
+
+    ul li a {
+        display: block;
+        text-align: center;
+        font-weight: $boldWeight;
+        padding: .5rem 0;
+        color: $primaryColor;
+        text-decoration: none;
+        transition: background 0.75s ease, color 0.75s ease;
+    } // end of anchor
+    
+    ul li.active a {
+        background-color: darken($secondaryColor, 10%);
+    } // end active
+
+
+    ul li a:hover {
+        color: $secondaryColor;
+        background-color: $primaryColor;
+    } // end hover
+
+} // end nav
+
+
+
+/* ------------------ Main ------------------ */
+
+main {
+    
+    figure.banner { width: 100%; }
+    figure.banner img { width: 100%;}
+
+    h1 {
+        font-size: 2rem;
+        margin: 1rem 0 0 $gutter;
+        color: $primaryColor;
+    } // end h1
+
+    h2 {
+        font-size: 1.5rem;
+        margin: .75rem 0 0 $gutter;
+        color: lighten( $primaryColor, 10% );
+    } // end h2
+
+    h3 {
+        font-size: 1.2rem;
+        color: lighten( $primaryColor, 20% );
+    } // end h3
+
+    p {
+        line-height: 130%;
+        color: $fontColor;
+    } // end p
+
+    hr.fadeAway {
+        background: linear-gradient(to right, rgba(66,78,100,1) 0%,rgba(66,78,100,0) 100%);
+        height: 2px;
+        border: none;
+        margin: 0 $gutter;
+    } // end hr
+
+    figure.photo { width: 100-$gutterdbl; margin: .5rem $gutter; }
+    figure.photo img { width: 100%;}
+    figure.photo figcaption { 
+        text-align: center; 
+        color: $primaryColor;
+        text-transform: uppercase;
+        font-weight: $boldWeight;
+        } // end figcaption
+
+    div.blog article {
+        margin: .5rem $gutter;
+        width: 100%-$gutterdbl;
+    } // end article
+
+    div.pop {
+        background-color: $accent;
+        text-align: center;
+        clear: both;
+        padding: 1.2rem 0;
+        .title {
+            font-size: 3.5rem;
+            padding: 0.5rem 0;
+         }
+        .subtitle {
+            font-size: 3rem; 
+            font-weight: $boldWeight;
+            padding: 0.5rem 0;
+        }
+        .copy {padding: 1rem 0;}
+        .copy span {
+            font-size: 4rem; 
+            color: $primaryColor; 
+            font-weight: $boldWeight;
+        } 
+    } // end pop
+} // end main
+
+
+
+
+
+
+/* ------------------ Footer ------------------ */
+footer {
+        background-color: $primaryColor;
+        width: 100%;
+
+        p {
+            text-align: center;
+            color: $secondaryColor;
+            padding: .75rem 0;
+            font-size: .9rem;
+        } // end p
+
+        p a {color: $secondaryColor;}
+
+    } // end of footer
+
+
+
+/* ------------------ Clearfox: Force an Element not to collapse ------------------ */
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+} // end clearfix
